@@ -1,0 +1,24 @@
+{
+  "retrieved_on": "2026-11-19",
+  "pages": [
+    {
+      "name": "StageWrite",
+      "url": "https://www.stagewritesoftware.com/",
+      "status": "200",
+      "exit_code": 0,
+      "sha256": "9152b5b24fd8bc33123d56e96ebf3f34c4a204e23b072e8744adab5d21abbf79",
+      "title": "Stage Write",
+      "scope": "公开页面；未登录、未执行产品业务"
+    },
+    {
+      "name": "CuePilot",
+      "url": "https://www.cuepilot.com/",
+      "status": "200",
+      "exit_code": 0,
+      "sha256": "2ffa6ccd6865556a0293d6e12fe46befe28e65bd5ec4550f1f2a95e739dabe1a",
+      "title": "CuePilot",
+      "scope": "公开页面；未登录、未执行产品业务"
+    }
+  ],
+  "limits": "可访问页面不等于已体验产品；HTTP失败保留原状态。"
+}

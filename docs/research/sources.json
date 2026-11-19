@@ -1,0 +1,70 @@
+{
+  "retrieved_on": "2026-11-19",
+  "sources": [
+    {
+      "repository": "https://github.com/bitfocus/companion",
+      "commit": "3af2a3098dbd21148f45013607c5d3704d2bb329",
+      "license": "MIT source + contributor agreement; bundled components have separate licenses",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "082796586c07201487cc15b58f1ce7ed26c6f712c041b95f07b30d38d702d456",
+          "read_lines": [
+            1,
+            61
+          ]
+        },
+        {
+          "path": "LICENSE.md",
+          "sha256": "9466786feb85aa6e78fdc158b49cb2ccf7c6f999b37d528a4d95337160a4a01c",
+          "read_lines": [
+            1,
+            49
+          ]
+        },
+        {
+          "path": "shared-lib/lib/Model/TriggerModel.ts",
+          "sha256": "38bd1391d8d70983b5ddb3c206c4d9da46ca792a06880f17533add14724d1022",
+          "read_lines": [
+            1,
+            65
+          ]
+        }
+      ],
+      "use": "只读研究，未运行上游脚本或复制实现"
+    },
+    {
+      "repository": "https://github.com/trelby/trelby",
+      "commit": "ded2305b7e2938fbcfc9a245c6f00947d8edc509",
+      "license": "GPL-2.0",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "80b22462c755049afb21bd324ed1ba22e413ad253ac3119481eb11bca958d712",
+          "read_lines": [
+            1,
+            45
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "df84246204e3c54cd24aebbc23714235f5fc41d754d53b65444a2afbf070130f",
+          "read_lines": [
+            1,
+            20
+          ]
+        },
+        {
+          "path": "trelby/screenplay.py",
+          "sha256": "b36855a6acba12c6e92a657987056af8b4469b2e786d28a32a8822034d50e314",
+          "read_lines": [
+            1,
+            65
+          ]
+        }
+      ],
+      "use": "只读研究，未运行上游脚本或复制实现"
+    }
+  ],
+  "adoption": "Companion区分触发、动作组合与运行反馈；Trelby区分剧本文本与排版。本包研究提示编排，独立实现确定性依赖和快照，不复制上游GPL或受限许可代码，不接设备动作。"
+}
