@@ -1,0 +1,12 @@
+{
+  "host": {
+    "version": "0.12.6",
+    "git_sha": "b75293837aaa220803b9dc964ba72b8646fa7244",
+    "archive_sha256": "de012d76bb9751d6f2ed78427c6887563fcfd4455ae19717c6f65a9182700ab3"
+  },
+  "plugin": {
+    "slug": "stage-rehearsal",
+    "version": "0.1.0",
+    "package_sha256": "cd9747cfebb064a7808defae79497b0b4f5dfe8a56d708dad5e6a518e5f0e36f"
+  }
+}

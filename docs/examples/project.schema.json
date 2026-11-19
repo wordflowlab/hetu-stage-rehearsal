@@ -1,0 +1,649 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "format_version": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 170
+    },
+    "brief": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 8000
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "source_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 99
+          },
+          "byte_start": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000000
+          },
+          "byte_end": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000000
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16000
+          },
+          "attribution": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "id",
+          "source_index",
+          "byte_start",
+          "byte_end",
+          "quote",
+          "attribution"
+        ]
+      },
+      "maxItems": 200
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 300
+          },
+          "text": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 24000
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "maxItems": 50
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "order",
+          "text",
+          "evidence_ids"
+        ]
+      },
+      "maxItems": 100
+    },
+    "cues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "department": {
+            "enum": [
+              "light",
+              "sound",
+              "stage",
+              "performer"
+            ]
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "instruction": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "requires_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "maxItems": 30
+          },
+          "estimate_ms": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3600000
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "scene_id",
+          "title",
+          "department",
+          "trigger",
+          "instruction",
+          "requires_ids",
+          "estimate_ms"
+        ]
+      },
+      "maxItems": 200
+    },
+    "plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "order": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 300
+                },
+                "cue_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "hold_ms": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3600000
+                }
+              },
+              "required": [
+                "id",
+                "order",
+                "cue_id",
+                "hold_ms"
+              ]
+            },
+            "maxItems": 300
+          },
+          "basis_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "items",
+          "basis_sha256",
+          "rationale"
+        ]
+      },
+      "maxItems": 40
+    },
+    "rehearsals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "plan_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "basis_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "snapshot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scenes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "order": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 300
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 0,
+                      "maxLength": 24000
+                    },
+                    "evidence_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100
+                      },
+                      "maxItems": 50
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "order",
+                    "text",
+                    "evidence_ids"
+                  ]
+                },
+                "maxItems": 200
+              },
+              "cues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "scene_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 100
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "department": {
+                      "enum": [
+                        "light",
+                        "sound",
+                        "stage",
+                        "performer"
+                      ]
+                    },
+                    "trigger": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 4000
+                    },
+                    "instruction": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 8000
+                    },
+                    "requires_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 100
+                      },
+                      "maxItems": 30
+                    },
+                    "estimate_ms": {
+                      "anyOf": [
+                        {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 3600000
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "scene_id",
+                    "title",
+                    "department",
+                    "trigger",
+                    "instruction",
+                    "requires_ids",
+                    "estimate_ms"
+                  ]
+                },
+                "maxItems": 200
+              },
+              "plan": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 100
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 100
+                        },
+                        "order": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 300
+                        },
+                        "cue_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 100
+                        },
+                        "hold_ms": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 3600000
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "order",
+                        "cue_id",
+                        "hold_ms"
+                      ]
+                    },
+                    "maxItems": 300
+                  },
+                  "basis_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "rationale": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 4000
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "items",
+                  "basis_sha256",
+                  "rationale"
+                ]
+              }
+            },
+            "required": [
+              "scenes",
+              "cues",
+              "plan"
+            ]
+          },
+          "outcomes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "occurrence_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                },
+                "at_ms": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 86400000
+                },
+                "result": {
+                  "enum": [
+                    "executed",
+                    "missed",
+                    "unknown"
+                  ]
+                },
+                "comment": {
+                  "type": "string",
+                  "minLength": 0,
+                  "maxLength": 4000
+                }
+              },
+              "required": [
+                "occurrence_id",
+                "at_ms",
+                "result",
+                "comment"
+              ]
+            },
+            "maxItems": 300
+          },
+          "declaration": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "plan_id",
+          "basis_sha256",
+          "snapshot",
+          "outcomes",
+          "declaration"
+        ]
+      },
+      "maxItems": 20
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "target_kind": {
+            "enum": [
+              "scene",
+              "cue",
+              "plan"
+            ]
+          },
+          "target_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "target_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "origin": {
+            "enum": [
+              "author",
+              "agent"
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "status": {
+            "enum": [
+              "open",
+              "resolved"
+            ]
+          },
+          "resolution": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "id",
+          "target_kind",
+          "target_id",
+          "target_sha256",
+          "origin",
+          "comment",
+          "status",
+          "resolution"
+        ]
+      },
+      "maxItems": 300
+    },
+    "basis_refs": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "owner_plugin_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "object_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000000
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "owner_plugin_id",
+          "object_id",
+          "revision",
+          "sha256"
+        ]
+      }
+    }
+  },
+  "required": [
+    "format_version",
+    "title",
+    "brief",
+    "evidence",
+    "scenes",
+    "cues",
+    "plans",
+    "rehearsals",
+    "notes",
+    "basis_refs"
+  ]
+}

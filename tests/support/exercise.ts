@@ -1,0 +1,6 @@
+import assert from 'node:assert/strict';import {selection,base,changed,refix,reviewTarget} from './scenario.ts';
+export const readingAction='export_reading';
+export async function exercise(c:any,r:any,key:()=>string){const s=selection(r);await c.invoke('check_stage',s);await c.invoke('target_digest',{...s,target_kind:reviewTarget.kind,target_id:reviewTarget.id});
+const v=await c.invoke('plan_view',{...s,plan_id:'linear'});assert.equal(v.estimated_ms,5500);assert.equal(v.items[1].missing_prerequisites.length,0);await c.invoke('plan_basis',{...s,items:r.object.content.plans[0].items});await c.invoke('compare_plans',{...s,from_id:'linear',to_id:'alternate'});await c.invoke('rehearsal_view',{...s,rehearsal_id:'temp-rehearsal'});r=await c.invoke('record_rehearsal',{...base(r,key()),plan_id:'linear',record_id:'actual',title:'手动排演记录',outcomes:[{occurrence_id:'a',at_ms:2500,result:'unknown',comment:'只记录手记，没有设备遥测'}],declaration:'原创虚构排演手记，不是真人现场执行验收。'});
+const d=changed(r.object.content);r=await c.invoke(d.action,{...base(r,key()),[d.field]:d.value});assert.equal((await c.invoke('check_stage',selection(r))).stale_plan_ids.length,2);r=await refix(c,r,key());assert.deepEqual((await c.invoke('check_stage',selection(r))).stale_plan_ids,['alternate']);
+return r;}
