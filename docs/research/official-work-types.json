@@ -1,0 +1,20 @@
+{
+  "receipts": [
+    {
+      "kind": "drama",
+      "object_id": "ext_f6b7571b-6e3f-4d07-8d41-cfb017ffd6a5",
+      "revision": 1,
+      "sha256": "f8a5228e1dd1765dbf5b2b1d366912cae595fce7dde459f3e437fec06c3fbd29",
+      "wrong_work_rejected": true
+    },
+    {
+      "kind": "video",
+      "object_id": "ext_3f298fb3-8fcc-4cfc-8dd8-a3e85ce4eb69",
+      "revision": 1,
+      "sha256": "14fcc696cb13ec4bddc8a57a58f96337a718ef374afda4106e839cb77685ad15",
+      "wrong_work_rejected": true
+    }
+  ],
+  "adopted": false,
+  "finalized": false
+}

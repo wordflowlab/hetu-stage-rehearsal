@@ -7,7 +7,7 @@
     "kind": "novel",
     "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
   },
-  "package_sha256": "cd9747cfebb064a7808defae79497b0b4f5dfe8a56d708dad5e6a518e5f0e36f",
+  "package_sha256": "943aabdcbd8cd92c96aa8ce748fe3afb44e57ed6475071befae8d6a4067d4748",
   "original": {
     "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
     "revision": 1,
@@ -15,8 +15,8 @@
   },
   "revised": {
     "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
-    "revision": 4,
-    "sha256": "a11c3c30c8b4597c4ac2e6481e4f950453d1ddbcf9325affc9be4924b61c6476"
+    "revision": 5,
+    "sha256": "d71bda6ae5f04e3c47f1c261de801604cc1d25afa98b91918c0d2bd84034c630"
   },
   "source_ref": {
     "kind": "resource",
@@ -79,8 +79,101 @@
     ],
     "unknown_estimate_cue_ids": []
   },
-  "upstream_basis": [],
+  "upstream_basis": [
+    {
+      "owner_plugin_id": "org.wordflowlab.standup-studio",
+      "object_id": "ext_180d3f15-44cc-4f3a-bf83-0954741cdb43",
+      "revision": 5,
+      "sha256": "5242472b345ee708453458707d41fd1c6bccaf95fe25c6b00b91dd336b34b780"
+    },
+    {
+      "owner_plugin_id": "org.wordflowlab.science-studio",
+      "object_id": "ext_e46f8939-9847-4308-89c0-acf2bd24b961",
+      "revision": 4,
+      "sha256": "11835da20cdf5962d783bb19978707d67ccba43cdbf36e91c6d55b0ebe2ab51a"
+    },
+    {
+      "owner_plugin_id": "org.wordflowlab.quest-studio",
+      "object_id": "ext_c079e3bc-670a-47ad-977e-99f889cd6d0c",
+      "revision": 4,
+      "sha256": "5a97779a0d18e3aee4addd7bff39a673932189eb84f455131accc188d6d7c9cc"
+    }
+  ],
   "adopted": false,
   "finalized": false,
-  "fixture": "原创虚构素材，不认证真人排演、观众反馈、科学解释或游戏体验"
+  "fixture": "原创虚构素材，不认证真人排演、观众反馈、科学解释或游戏体验",
+  "original_work_fixed_ref": {
+    "revision_ref": {
+      "revision": 1
+    },
+    "sha256": "6577f6a191a8b6889c1c769db9f18e6afeb47e07359c92b47f259514ad33aaaf",
+    "work_ref": {
+      "kind": "novel",
+      "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac",
+      "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875"
+    }
+  },
+  "original_work_record_unchanged": true,
+  "continuation": {
+    "task_kind": "chapter_draft",
+    "fixed_input_refs": [
+      {
+        "kind": "resource",
+        "work_ref": {
+          "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+          "kind": "novel",
+          "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+        },
+        "resource_id": "resource_3ff6d5ce-c217-4def-be61-090f813446bb",
+        "revision": 1,
+        "sha256": "6f019f2a8ed8d47e731d5d0ab08a50b02ffc7616d1123d036bb893ace8b3fa2f"
+      },
+      {
+        "kind": "resource",
+        "work_ref": {
+          "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+          "kind": "novel",
+          "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+        },
+        "resource_id": "resource_10c0cf94-5290-4b1b-9dde-62b6e22102ae",
+        "revision": 1,
+        "sha256": "57223ef68ed8064c41bd309e52c589dbca89d669e7716ee170ab0594834e550b"
+      }
+    ],
+    "context_full_bytes_verified": true,
+    "candidate_saved_and_read": true,
+    "adopted": false
+  },
+  "previous_candidate_package_sha256": "cd9747cfebb064a7808defae79497b0b4f5dfe8a56d708dad5e6a518e5f0e36f",
+  "final_candidate_upgrade": {
+    "old_revisions_and_operation_preserved": true,
+    "other_plugin_states_preserved": 39,
+    "methods_byte_verified": 3
+  },
+  "mcp": {
+    "connected_host_version": "0.12.3",
+    "final_package_hot_discovered": true,
+    "read_revision": 5,
+    "revised_sha256_verified": true,
+    "methods": [
+      {
+        "resource": "SKILL.md",
+        "status": "succeeded",
+        "sha256": "5a454373314f5581695e073fff92d869ee18c55d9362844d7d6af4cb7809be20",
+        "matches_final_package": true
+      },
+      {
+        "resource": "references/workflows.md",
+        "status": "succeeded",
+        "sha256": "eb88bacbfccaf05eaebc8ff353d7771210a91630971f1a0806decd97f53f12cc",
+        "matches_final_package": true
+      },
+      {
+        "resource": "references/operations.md",
+        "status": "succeeded",
+        "sha256": "454efe70c957a2f92586f08cdca287d61b62500fe9ad71b335f9c34f07b7a029",
+        "matches_final_package": true
+      }
+    ]
+  }
 }
