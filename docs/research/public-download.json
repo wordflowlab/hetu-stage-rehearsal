@@ -1,0 +1,8 @@
+{
+  "release": "https://github.com/wordflowlab/hetu-stage-rehearsal/releases/tag/v0.1.0",
+  "source_commit": "204b27f6b1fd37eb319ecd738eeffd85b3f9c0bb",
+  "archive_sha256": "a7ccbe2b665f8622bc8f5ca423c366056283409e082f04c6ff360478bb1ea1ec",
+  "package_sha256": "943aabdcbd8cd92c96aa8ce748fe3afb44e57ed6475071befae8d6a4067d4748",
+  "files_byte_identical": 18,
+  "verified": true
+}
