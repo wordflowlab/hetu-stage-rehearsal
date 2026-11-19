@@ -1,0 +1,86 @@
+{
+  "recorded_at": "2026-11-19",
+  "entry": "当前Codex经公开0.12.6 CLI连续操作；既有MCP热发现另行登记",
+  "host_version": "0.12.6",
+  "work_ref": {
+    "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+    "kind": "novel",
+    "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+  },
+  "package_sha256": "cd9747cfebb064a7808defae79497b0b4f5dfe8a56d708dad5e6a518e5f0e36f",
+  "original": {
+    "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
+    "revision": 1,
+    "sha256": "79dabc531103d9aa4fd82c22d240bf89034e32b40129b9a1eb1192f16a397eb0"
+  },
+  "revised": {
+    "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
+    "revision": 4,
+    "sha256": "a11c3c30c8b4597c4ac2e6481e4f950453d1ddbcf9325affc9be4924b61c6476"
+  },
+  "source_ref": {
+    "kind": "resource",
+    "work_ref": {
+      "workspace_id": "workspace_01abb9b1-8e4a-46ac-a8ee-82d200f35875",
+      "kind": "novel",
+      "object_id": "novel_c070a2bc-10f4-4b55-a61b-981caa46f1ac"
+    },
+    "resource_id": "resource_3ff6d5ce-c217-4def-be61-090f813446bb",
+    "revision": 1,
+    "sha256": "6f019f2a8ed8d47e731d5d0ab08a50b02ffc7616d1123d036bb893ace8b3fa2f"
+  },
+  "original_operation_preserved": true,
+  "previous_revision_preserved": true,
+  "old_snapshot_preserved": true,
+  "other_states_preserved": 36,
+  "existing_objects_read": 0,
+  "checks_before_review": {
+    "basis_ref": {
+      "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
+      "owner_plugin_id": "org.wordflowlab.stage-rehearsal",
+      "revision": 3,
+      "sha256": "7d23d159f30af7aee82e0049cf6546dee145bcbb6bfd74f16096a8a3fb02e49f"
+    },
+    "note": "不控制现场设备，手记不证明设备实际动作。",
+    "project_ref": {
+      "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
+      "revision": 3,
+      "sha256": "7d23d159f30af7aee82e0049cf6546dee145bcbb6bfd74f16096a8a3fb02e49f"
+    },
+    "rehearsals": 1,
+    "stale_note_ids": [
+      "note"
+    ],
+    "stale_plan_ids": [
+      "linear",
+      "alternate"
+    ],
+    "unknown_estimate_cue_ids": []
+  },
+  "checks_after": {
+    "basis_ref": {
+      "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
+      "owner_plugin_id": "org.wordflowlab.stage-rehearsal",
+      "revision": 4,
+      "sha256": "a11c3c30c8b4597c4ac2e6481e4f950453d1ddbcf9325affc9be4924b61c6476"
+    },
+    "note": "不控制现场设备，手记不证明设备实际动作。",
+    "project_ref": {
+      "object_id": "ext_029c2767-c892-4e56-86a9-3fdc9079347f",
+      "revision": 4,
+      "sha256": "a11c3c30c8b4597c4ac2e6481e4f950453d1ddbcf9325affc9be4924b61c6476"
+    },
+    "rehearsals": 1,
+    "stale_note_ids": [
+      "note"
+    ],
+    "stale_plan_ids": [
+      "alternate"
+    ],
+    "unknown_estimate_cue_ids": []
+  },
+  "upstream_basis": [],
+  "adopted": false,
+  "finalized": false,
+  "fixture": "原创虚构素材，不认证真人排演、观众反馈、科学解释或游戏体验"
+}
